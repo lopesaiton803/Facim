@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção de Contato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f47834;
+            --secondary-color: #252424;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --dark-bg: #223854;
+            --transition: all 0.3s ease;
+            --font-primary: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--light-bg);
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            transition: var(--transition);
+            margin: 0 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .contact-form-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-control {
+            border: 1px solid #e1e1e1;
+            padding: 12px 15px;
+            margin-bottom: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .form-label {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .contact-info {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .form-check-label {
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+
+        .form-type-selector {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .form-check {
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background-color: var(--light-bg);
+            transition: var(--transition);
+        }
+
+        .form-check.active {
+            background-color: var(--primary-color);
+        }
+
+        .form-check.active .form-check-label {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Seção de Contato -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="mb-5">Escolha abaixo o tipo de contato que deseja fazer conosco. Estamos à disposição para atendê-lo da melhor forma possível.</p>
+                    
+                    <!-- Seletor de Formulários -->
+                    <div class="form-type-selector">
+                        <div class="form-check active">
+                            <input class="form-check-input" type="radio" name="formType" id="formTypeBusiness" value="business" checked>
+                            <label class="form-check-label" for="formTypeBusiness">
+                                Empresarial
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="formType" id="formTypeSupport" value="support">
+                            <label class="form-check-label" for="formTypeSupport">
+                                Suporte Técnico
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="formType" id="formTypeCareer" value="career">
+                            <label class="form-check-label" for="formTypeCareer">
+                                Carreiras
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Container dos Formulários -->
+                    <div class="contact-form-container">
+                        <!-- Formulário Empresarial -->
+                        <form id="businessForm" class="form-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="businessName" class="form-label">Nome da Empresa</label>
+                                        <input type="text" class="form-control" id="businessName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="contactPerson" class="form-label">Pessoa de Contato</label>
+                                        <input type="text" class="form-control" id="contactPerson" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="businessEmail" class="form-label">Email Corporativo</label>
+                                        <input type="email" class="form-control" id="businessEmail" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="businessPhone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="businessPhone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessSubject" class="form-label">Assunto</label>
+                                <select class="form-select" id="businessSubject" required>
+                                    <option value="" selected disabled>Selecione um assunto</option>
+                                    <option value="partnership">Parceria</option>
+                                    <option value="proposal">Proposta Comercial</option>
+                                    <option value="information">Informações</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessMessage" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="businessMessage" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                        
+                        <!-- Formulário de Suporte Técnico -->
+                        <form id="supportForm" class="form-content d-none">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="supportName" class="form-label">Nome Completo</label>
+                                        <input type="text" class="form-control" id="supportName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="supportEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="supportEmail" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="supportPhone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="supportPhone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="productModel" class="form-label">Modelo do Produto</label>
+                                        <input type="text" class="form-control" id="productModel" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="issueType" class="form-label">Tipo de Problema</label>
+                                <select class="form-select" id="issueType" required>
+                                    <option value="" selected disabled>Selecione o tipo de problema</option>
+                                    <option value="technical">Problema Técnico</option>
+                                    <option value="warranty">Garantia</option>
+                                    <option value="usage">Dúvida de Uso</option>
+                                    <option value="other">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="supportMessage" class="form-label">Descrição do Problema</label>
+                                <textarea class="form-control" id="supportMessage" rows="5" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="supportFile" class="form-label">Anexar Arquivo (opcional)</label>
+                                <input class="form-control" type="file" id="supportFile">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                        </form>
+                        
+                        <!-- Formulário de Carreiras -->
+                        <form id="careerForm" class="form-content d-none">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="careerName" class="form-label">Nome Completo</label>
+                                        <input type="text" class="form-control" id="careerName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="careerEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="careerEmail" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="careerPhone" class="form-label">Telefone</label>
+                                        <input type="tel" class="form-control" id="careerPhone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="position" class="form-label">Vaga de Interesse</label>
+                                        <select class="form-select" id="position" required>
+                                            <option value="" selected disabled>Selecione uma vaga</option>
+                                            <option value="dev">Desenvolvedor</option>
+                                            <option value="design">Designer</option>
+                                            <option value="marketing">Marketing</option>
+                                            <option value="sales">Vendas</option>
+                                            <option value="other">Outra</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="experience" class="form-label">Experiência Profissional</label>
+                                <textarea class="form-control" id="experience" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="education" class="form-label">Formação Acadêmica</label>
+                                <input type="text" class="form-control" id="education" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="resume" class="form-label">Currículo (PDF)</label>
+                                <input class="form-control" type="file" id="resume" accept=".pdf" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="coverLetter" class="form-label">Carta de Apresentação (opcional)</label>
+                                <textarea class="form-control" id="coverLetter" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Candidatura</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <div class="contact-info-item">
+                            <i class="bi bi-geo-alt"></i>
+                            <p>Av. Paulista, 1000, São Paulo - SP, 01310-100</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="bi bi-telephone"></i>
+                            <p>+55 (11) 3456-7890</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="bi bi-envelope"></i>
+                            <p>contato@suaempresa.com.br</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="bi bi-clock"></i>
+                            <p>Segunda a Sexta: 9h às 18h</p>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="#" class="me-2 text-white"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-2 text-white"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="me-2 text-white"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-2 text-white"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="mb-4">Nossa Localização</h3>
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=Av.%20Paulista,%201000,%20S%C3%A3o%20Paulo&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                                frameborder="0" 
+                                style="border:0; width: 100%; height: 100%;" 
+                                allowfullscreen="">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aqui viria o seu footer (você mencionou que já tem) -->
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <script>
+        // Script para alternar entre os formulários
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = {
+                business: document.getElementById('businessForm'),
+                support: document.getElementById('supportForm'),
+                career: document.getElementById('careerForm')
+            };
+            
+            const radioButtons = document.querySelectorAll('input[name="formType"]');
+            const formChecks = document.querySelectorAll('.form-check');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Esconder todos os formulários
+                    for (const key in forms) {
+                        forms[key].classList.add('d-none');
+                    }
+                    
+                    // Mostrar o formulário selecionado
+                    forms[this.value].classList.remove('d-none');
+                    
+                    // Atualizar classes ativas
+                    formChecks.forEach(check => {
+                        check.classList.remove('active');
+                    });
+                    
+                    this.closest('.form-check').classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

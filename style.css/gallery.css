@@ -1,0 +1,420 @@
+/* ===== VARIÁVEIS COM SUA PALETA ===== */
+:root {
+    --primary-color: #f47834;
+    --secondary-color: #252424;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --dark-bg: #223854;
+    --transition: all 0.3s ease;
+    --font-primary: 'Poppins', sans-serif;
+}
+/* banenr section */
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Opacidade ajustável */
+    z-index: -1;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(209, 108, 24, 0.2); /* Overlay escuro para melhorar contraste */
+    z-index: -1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.breadcrumb-custom {
+    background-color: transparent;
+    padding: 0.75rem 0;
+}
+
+.breadcrumb-custom .breadcrumb-item {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+    color: #fff;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== AJUSTES ESPECÍFICOS SOLICITADOS ===== */
+
+/* Hero Section */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height:60vh; /* Altura ajustada para melhor visualização */
+    display: flex;
+    padding: 20px 0px 0px 0px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    background-image: url('../img/martin-baron-ZL4t9yucR_o-unsplash.jpg'); /* Imagem de feira ou FACIM */
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+}
+
+/* Overlay com a cor exata #252424 com opacidade */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 51, 51, 0.7); /* #252424 com 80% de opacidade */
+}
+
+.hero .container {
+    position: relative; /* Para ficar acima do overlay */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 1rem auto;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/* Gallery Section - Correção de posicionamento */
+#gallery {
+    padding: 30px 0;
+    position: relative;
+    top: -60px; /* Reduzido significativamente para diminuir o espaço */
+    margin-bottom: -60px; /* Ajustado para manter o fluxo da página */
+}
+
+/* Full Width CTA */
+.full-width-cta {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    position: relative;
+    z-index: 2;
+    padding: 40px 0;
+}
+
+.full-width-cta h2 {
+    color: var(--secondary-color);
+}
+
+.full-width-cta .revolution {
+    color: var(--primary-color);
+}
+
+.full-width-cta p {
+    color: var(--secondary-color);
+}
+
+/* Estilos da galeria melhorados */
+.gallery-container {
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Reduzido de 30px para 15px */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0 8px; /* Adicionado padding horizontal menor */
+    color: white;
+}
+
+.row.gallery-container {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Reduzido de -10px para -5px */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 250px; /* Altura reduzida e padronizada */
+    object-fit: cover;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Reduzido de 1.1 para 1.05 */
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(255, 252, 252, 0) 60%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.2rem;
+    color: white;
+}
+
+
+.gallery-item .overlay h5{
+    color: white;
+}
+.gallery-filter .btn:hover{
+    background-color: #f47834;
+    border: none;
+  
+}
+                    
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* ===== RESPONSIVIDADE PARA TODOS OS DISPOSITIVOS ===== */
+
+/* Dispositivos grandes (desktops, 1200px+) */
+@media (min-width: 1200px) {
+    .hero {
+        height: 40vh;
+    }
+    .gallery-item img {
+        height: 250px;
+    }
+    #gallery {
+        top: -60px;
+        margin-bottom: -60px;
+    }
+}
+
+/* Dispositivos médios (tablets, 992px a 1199px) */
+@media (max-width: 1199.98px) {
+    .hero {
+        height: 35vh;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .gallery-item img {
+        height: 220px;
+    }
+    #gallery {
+        top: -50px;
+        margin-bottom: -50px;
+    }
+}
+
+/* Tablets pequenos (768px a 991px) */
+@media (max-width: 991.98px) {
+    /* Top Bar: Rolagem horizontal suave */
+    .top-bar {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow-x: auto;
+        padding: 7px 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Hero: Altura e texto proporcional */
+    .hero {
+        height: 30vh;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    /* Galeria: Posição relativa ajustada */
+    #gallery {
+        top: -40px;
+        margin-bottom: -40px;
+        padding: 20px 0;
+    }
+    .gallery-item {
+        margin-bottom: 12px;
+    }
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* Dispositivos móveis (576px a 767px) */
+@media (max-width: 767.98px) {
+    /* Top Bar: Texto mínimo com scroll */
+    .top-bar {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+
+    /* Hero: Altura reduzida proporcionalmente */
+    .hero {
+        height: 25vh;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+
+    /* Galeria: Overlap reduzido */
+    #gallery {
+        top: -30px;
+        margin-bottom: -30px;
+        padding: 15px 0;
+    }
+    .gallery-item {
+        margin-bottom: 10px;
+    }
+    .gallery-item img {
+        height: 180px;
+    }
+
+    /* Navbar: Logo e botões compactos */
+    .navbar-brand img {
+        max-width: 100px;
+    }
+    .btn-inscricao {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Dispositivos muito pequenos (até 575px) */
+@media (max-width: 575.98px) {
+    /* Hero: Ajuste fino para telas mínimas */
+    .hero {
+        height: 25vh;
+        padding: 10px 0;
+    }
+    .hero h1 {
+        font-size: 20px;
+    }
+    .hero p {
+        font-size: 0.85rem;
+        margin: 0.5rem auto;
+    }
+
+    /* Galeria: Posição final compacta */
+    #gallery {
+        top: -20px;
+        margin-bottom: -20px;
+        padding: 10px 0;
+    }
+    .gallery-item {
+        margin-bottom: 8px;
+    }
+    .gallery-item img {
+        height: 160px;
+    }
+
+    /* Top Bar: Texto essencial */
+    .top-bar {
+        font-size: 9px;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 370px) {
+    .hero {
+        height: 30vh;
+    }
+    .gallery-item img {
+        height: 140px;
+    }
+}
+
+/* Fix para iPad e alguns tablets específicos */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .hero {
+        height: 25vh;
+    }
+    #gallery {
+        top: -40px;
+        margin-bottom: -40px;
+    }
+}
+
+/* Fix para dispositivos com altura muito reduzida */
+@media (max-height: 600px) {
+    .hero {
+        height: 50vh; /* Ajuste proporcional para telas baixas */
+    }
+    .footer {
+        position: relative;
+        margin-top: 30px;
+    }
+}
